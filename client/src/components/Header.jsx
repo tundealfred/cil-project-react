@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* logo */}
         <div className="text-2xl font-bold text-gray-800">
-          CIL GAS Instruments
+          Controls and Instrumentation Ltd
         </div>
         {/* Navigation Links */}
         <nav className="hidden md:flex space-x-6">
