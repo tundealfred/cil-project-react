@@ -71,6 +71,26 @@ const Home = () => {
             Who We <span className="text-yellow-400">Are</span>
           </motion.h1>
         </div>
+        {/* Core Description */}
+        <section className="container mx-auto px-6 py-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <p className="text-gray-700 text-xl leading-relaxed">
+              We install them. We commission them. We maintain them. We even
+              design & build systems around them. Whether it’s CEMS, Syngas
+              Analysis, process gas analysis, gas sampling, or gas detection for
+              health and safety, we have the expertise.
+            </p>
+            <p className="mt-6 text-gray-700 text-xl leading-relaxed">
+              If you need a solution specifying, we can help. If a system
+              doesn’t exist to meet your needs, we’ll build you one.
+            </p>
+          </motion.div>
+        </section>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <ServiceCard

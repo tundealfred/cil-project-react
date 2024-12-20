@@ -46,7 +46,7 @@ const Header = () => {
         <nav
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } absolute top-full left-0 w-full bg-white md:static md:block md:w-auto space-y-4 md:space-y-0 md:flex md:items-center md:space-x-6 transition-all duration-300`}
+          } absolute top-full left-0 w-full bg-white md:static md:w-auto space-y-4 md:space-y-0 md:flex md:items-center md:space-x-6 transition-all duration-300`}
         >
           <NavLink
             to="/"
@@ -69,17 +69,6 @@ const Header = () => {
             }
           >
             About
-          </NavLink>
-          <NavLink
-            to="/services"
-            onClick={handleLinkClick}
-            className={({ isActive }) =>
-              isActive
-                ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
-                : "text-gray-800 hover:text-blue-500 block py-2 px-6 md:py-0 md:px-0"
-            }
-          >
-            Services
           </NavLink>
           <NavLink
             to="/case-studies"
