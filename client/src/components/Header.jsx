@@ -1,22 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-md sticky top-0 z-10">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        {/* logo */}
+        {/* Logo */}
         <div className="text-2xl font-bold text-gray-800">
           Controls and Instrumentation Ltd
         </div>
-        {/* Navigation Links */}
-        <nav className="hidden md:flex space-x-6">
+
+        {/* Hamburger Menu Button */}
+        <button
+          className="md:hidden flex items-center text-gray-800 focus:outline-none"
+          onClick={toggleMenu}
+        >
+          {/* Hamburger SVG */}
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+
+        {/* Navbar */}
+        <nav
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } absolute top-full left-0 w-full bg-white md:static md:w-auto space-y-4 md:space-y-0 md:flex md:items-center md:space-x-6 transition-all duration-300`}
+        >
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-500 font-medium"
-                : "text-gray-800:text-blue-500 transition"
+                ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
+                : "text-gray-800 hover:text-blue-500 block py-2 px-6 md:py-0 md:px-0"
             }
           >
             Home
@@ -25,8 +58,8 @@ const Header = () => {
             to="/about"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-500 font-medium"
-                : "text-gray-800:text-blue-500 transition"
+                ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
+                : "text-gray-800 hover:text-blue-500 block py-2 px-6 md:py-0 md:px-0"
             }
           >
             About
@@ -35,8 +68,8 @@ const Header = () => {
             to="/services"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-500 font-medium"
-                : "text-gray-800:text-blue-500 transition"
+                ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
+                : "text-gray-800 hover:text-blue-500 block py-2 px-6 md:py-0 md:px-0"
             }
           >
             Services
@@ -45,8 +78,8 @@ const Header = () => {
             to="/case-studies"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-500 font-medium"
-                : "text-gray-800:text-blue-500 transition"
+                ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
+                : "text-gray-800 hover:text-blue-500 block py-2 px-6 md:py-0 md:px-0"
             }
           >
             Case Studies
@@ -55,35 +88,13 @@ const Header = () => {
             to="/contact"
             className={({ isActive }) =>
               isActive
-                ? "text-blue-500 font-medium"
-                : "text-gray-800:text-blue-500 transition"
+                ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
+                : "text-gray-800 hover:text-blue-500 block py-2 px-6 md:py-0 md:px-0"
             }
           >
             Contact
           </NavLink>
         </nav>
-
-        <div className="md:hidden">
-          <button
-            className="text-gray-800 focus:outline-none hover:text-blue-500 transition"
-            aria-label="Toggle Menu"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-        </div>
       </div>
     </header>
   );
