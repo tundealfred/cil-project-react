@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../assets/cilimage2.jpg"; // Adjust the path based on your project structure
+import backgroundImage from "../assets/cilimage5.jpg"; // Adjust the path based on your project structure
 
 const HeroSection = () => {
   return (
