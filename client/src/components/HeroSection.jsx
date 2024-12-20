@@ -15,7 +15,7 @@ const HeroSection = () => {
         <h1 className="text-4xl font-extrabold text-gray-800 leading-tight">
           Innovative Gas Instruments for Modern Industries
         </h1>
-        <p className="mt-4 text-2xl font-bold text-gray-600">
+        <p className="mt-4 text-2xl font-bold text-gray-950">
           Discover our advanced solutions for gas monitoring and analysis.
         </p>
         <div className="mt-8">
