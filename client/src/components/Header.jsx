@@ -8,6 +8,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false); // Close the menu after clicking a link
+  };
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-10">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -42,10 +46,11 @@ const Header = () => {
         <nav
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } absolute top-full left-0 w-full bg-white md:static md:w-auto space-y-4 md:space-y-0 md:flex md:items-center md:space-x-6 transition-all duration-300`}
+          } absolute top-full left-0 w-full bg-white md:static md:block md:w-auto space-y-4 md:space-y-0 md:flex md:items-center md:space-x-6 transition-all duration-300`}
         >
           <NavLink
             to="/"
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
@@ -56,6 +61,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/about"
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
@@ -66,6 +72,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/services"
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
@@ -76,6 +83,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/case-studies"
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
@@ -86,6 +94,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             to="/contact"
+            onClick={handleLinkClick}
             className={({ isActive }) =>
               isActive
                 ? "text-blue-500 font-medium block py-2 px-6 md:py-0 md:px-0"
