@@ -1,130 +1,140 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { FaCogs, FaFlask, FaWrench, FaClipboardList } from "react-icons/fa";
 
 const About = () => {
+  const [activeTab, setActiveTab] = useState("CEMS");
+
+  const expertiseContent = {
+    CEMS: {
+      icon: <FaCogs className="text-blue-500 text-3xl" />,
+      title: "CEMS",
+      description:
+        "15 years of building, installing, and maintaining Continuous Emission Monitoring Systems. We know the ins and outs of legislation, pitfalls, and compliance.",
+      image: "client/src/assets/cilimage7.jpg",
+    },
+    SyngasAnalysis: {
+      icon: <FaFlask className="text-green-500 text-3xl" />,
+      title: "Syngas Analysis",
+      description:
+        "5 years of experience in challenging continuous gas analysis applications, from gasification fuels to plant operation improvements.",
+      image: "client/src/assets/cilimage7.jpg",
+    },
+    Maintenance: {
+      icon: <FaWrench className="text-orange-500 text-3xl" />,
+      title: "Maintenance",
+      description:
+        "Flexible maintenance options, from one-off calibrations to complete service contracts.",
+      image: "client/src/assets/cilimage7.jpg",
+    },
+    Installation: {
+      icon: <FaClipboardList className="text-red-500 text-3xl" />,
+      title: "Installation & Commissioning",
+      description:
+        "Complete project solutions, from single sensors to entire systems. We help get your project across the finish line.",
+      image: "client/src/assets/cilimage7.jpg",
+    },
+  };
+
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <main className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-16">
-        <div className="container mx-auto px-6 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-bold"
-          >
+      <section className="relative bg-blue-600 text-white">
+        <div className="container mx-auto px-6 py-16 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold animate-fade-in">
             Who We Are
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mt-4 text-lg"
-          >
-            Built on 15 years of experience, we know gas instruments inside out.
-          </motion.p>
+          </h1>
+          <p className="mt-4 text-lg md:text-xl animate-fade-in delay-200">
+            Innovative Gas Instruments for Modern Industries
+          </p>
+        </div>
+        {/*<div className="absolute inset-0 bg-gradient-to-t from-blue-600 via-blue-500 to-transparent opacity-70"></div>*/}
+      </section>
+
+      {/* Introduction Section */}
+      <section
+        className="container mx-auto px-6 py-12 md:flex md:items-center md:space-x-8"
+        aria-labelledby="introduction"
+      >
+        <div className="md:w-1/2">
+          <h2 id="introduction" className="text-3xl font-bold text-gray-800">
+            We Know Gas Instruments
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Built on 15 years of experience, we install, commission, and
+            maintain gas instruments. If no existing solution meets your needs,
+            we’ll design and build one for you.
+          </p>
+        </div>
+        <div className="md:w-1/2 mt-8 md:mt-0">
+          <img
+            src="../assets/cilimage7.jpg"
+            alt="Team working on gas instruments"
+            className="rounded-lg shadow-lg"
+          />
         </div>
       </section>
 
-      {/* Core Description */}
-      <section className="container mx-auto px-6 py-10">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto"
-        >
-          <p className="text-gray-700 text-lg leading-relaxed">
-            We install them. We commission them. We maintain them. We even
-            design & build systems around them. Whether it’s CEMS, Syngas
-            Analysis, process gas analysis, gas sampling, or gas detection for
-            health and safety, we have the expertise.
-          </p>
-          <p className="mt-6 text-gray-700 text-lg leading-relaxed">
-            If your system needs maintenance, repair, or fault diagnosis, we can
-            help. If you need a solution specifying, we can help. If a system
-            doesn’t exist to meet your needs, we’ll build you one.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Expertise Cards */}
-      <section className="container mx-auto px-6 py-10">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
+      {/* Expertise Section */}
+      <section className="container mx-auto px-6 py-12">
+        <h2 className="text-3xl font-bold text-center text-gray-800">
           Our Expertise
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* CEMS Card */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-blue-500/40 transition-shadow duration-300"
-          >
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-blue-500 text-white rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-semibold text-blue-500">CEMS</h3>
-            </div>
-            <p className="mt-4 text-gray-600">
-              15 years of designing, building, and maintaining Continuous
-              Emission Monitoring Systems. We know the ins and outs of
-              legislation and compliance.
-            </p>
-          </motion.div>
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+          {/* Tabs */}
+          <div className="bg-gray-100 rounded-lg shadow-lg p-4">
+            {Object.keys(expertiseContent).map((key) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key)}
+                className={`flex items-center gap-3 w-full py-3 px-4 text-left rounded-lg transition ${
+                  activeTab === key
+                    ? "bg-blue-600 text-white"
+                    : "bg-white text-gray-800 hover:bg-blue-100"
+                }`}
+              >
+                {expertiseContent[key].icon}
+                <span className="font-medium">
+                  {expertiseContent[key].title}
+                </span>
+              </button>
+            ))}
+          </div>
 
-          {/* Syngas Analysis Card */}
-          <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-white shadow-lg rounded-lg p-6 hover:shadow-indigo-500/40 transition-shadow duration-300"
-          >
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-indigo-500 text-white rounded-full">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3 10h11m-6 4h6m-6-8h2m7 8h4m-4-4h4"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-semibold text-indigo-500">
-                Syngas Analysis
-              </h3>
-            </div>
-            <p className="mt-4 text-gray-600">
-              5 years of expertise in challenging syngas applications, providing
-              valuable insights to optimize plant operations.
+          {/* Content */}
+          <div className="col-span-3 bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              {expertiseContent[activeTab].title}
+            </h3>
+            <p className="text-gray-600">
+              {expertiseContent[activeTab].description}
             </p>
-          </motion.div>
+            <img
+              src={expertiseContent[activeTab].image}
+              alt={expertiseContent[activeTab].title}
+              className="mt-6 rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
-    </div>
+
+      {/* Call to Action */}
+      <section className="relative bg-blue-600 text-white py-12">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold animate-fade-in">
+            Want to Start a New Project With Us?
+          </h2>
+          <p className="mt-4 text-lg animate-fade-in delay-200">
+            Our trusted team is ready to solve your problems.
+          </p>
+          <a
+            href="/contact"
+            className="mt-6 inline-block bg-white text-blue-600 font-semibold py-2 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition"
+          >
+            Contact Us
+          </a>
+        </div>
+      </section>
+    </main>
   );
 };
 
