@@ -41,13 +41,12 @@ const About = () => {
       <section className="relative bg-blue-600 text-white">
         <div className="container mx-auto px-6 py-16 text-center">
           <h1 className="text-4xl md:text-5xl font-extrabold animate-fade-in">
-            Who We Are
+            About
           </h1>
           <p className="mt-4 text-lg md:text-xl animate-fade-in delay-200">
             Innovative Gas Instruments for Modern Industries
           </p>
         </div>
-        {/*<div className="absolute inset-0 bg-gradient-to-t from-blue-600 via-blue-500 to-transparent opacity-70"></div>*/}
       </section>
 
       {/* Introduction Section */}
