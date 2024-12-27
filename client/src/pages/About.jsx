@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FaCogs, FaFlask, FaWrench, FaClipboardList } from "react-icons/fa";
+import cilimage2 from "../assets/cilimage2.jpg";
+import cilimage7 from "../assets/cilimage7.jpg";
 
 const About = () => {
   const [activeTab, setActiveTab] = useState("CEMS");
@@ -9,29 +11,29 @@ const About = () => {
       icon: <FaCogs className="text-blue-500 text-3xl" />,
       title: "CEMS",
       description:
-        "15 years of building, installing, and maintaining Continuous Emission Monitoring Systems. We know the ins and outs of legislation, pitfalls, and compliance.",
-      image: "client/src/assets/cilimage7.jpg",
+        "With 15 years of experience in building, installing, and maintaining Continuous Emission Monitoring Systems, we have unparalleled expertise. We understand the complexities of legislation, the potential pitfalls, and the practicalities of achieving compliance. Our in-depth knowledge ensures we can deliver reliable, efficient, and tailored solutions for your emission monitoring needs.",
+      image: cilimage2, // Use the imported image,
     },
     SyngasAnalysis: {
       icon: <FaFlask className="text-green-500 text-3xl" />,
       title: "Syngas Analysis",
       description:
-        "5 years of experience in challenging continuous gas analysis applications, from gasification fuels to plant operation improvements.",
-      image: "client/src/assets/cilimage7.jpg",
+        "With 5 years of expertise in tackling challenging continuous gas analysis applications, we’ve worked extensively with various gasification fuels, including wood, RDF, and more. Our experience spans diverse technologies, enabling us to measure multiple gas components, optimise processes, and deliver valuable insights that drive significant improvements in plant operations.",
+      image: cilimage7, // Use the imported image
     },
     Maintenance: {
       icon: <FaWrench className="text-orange-500 text-3xl" />,
       title: "Maintenance",
       description:
-        "Flexible maintenance options, from one-off calibrations to complete service contracts.",
-      image: "client/src/assets/cilimage7.jpg",
+        "We offer flexible maintenance solutions tailored to your needs, ranging from one-off calibrations to comprehensive service contracts. Whether it’s routine servicing, fault diagnosis, or urgent repairs, our expertise ensures your systems remain reliable and efficient, minimising downtime and maximising performance across all gas instrument applications.",
+      image: cilimage2, // Use the imported image
     },
     Installation: {
       icon: <FaClipboardList className="text-red-500 text-3xl" />,
       title: "Installation & Commissioning",
       description:
-        "Complete project solutions, from single sensors to entire systems. We help get your project across the finish line.",
-      image: "client/src/assets/cilimage7.jpg",
+        "We provide complete project solutions, handling everything from the installation of single sensors to the commissioning of entire systems. With meticulous attention to detail and a commitment to quality, we ensure your project is completed smoothly, efficiently, and to the highest standards, helping you achieve operational readiness with confidence.",
+      image: cilimage7, // Use the imported image
     },
   };
 
@@ -58,17 +60,30 @@ const About = () => {
           <h2 id="introduction" className="text-3xl font-bold text-gray-800">
             We Know Gas Instruments
           </h2>
-          <p className="mt-4 text-gray-600">
-            Built on 15 years of experience, we install, commission, and
-            maintain gas instruments. If no existing solution meets your needs,
-            we’ll design and build one for you.
+          <p className="mt-4 text-gray-600 text-justify">
+            Built on 15 years of expertise, Controls and Instrumentation Ltd
+            specialises in installing, commissioning, and maintaining gas
+            instruments for a wide range of applications. From Continuous
+            Emission Monitoring Systems (CEMS) to Syngas Analysis, process gas
+            analysis, and gas detection for health and safety, we provide
+            tailored solutions to meet your needs. As an independent company, we
+            ensure every recommendation is driven by what’s best for your
+            system—not manufacturer constraints. Whether your priority is
+            compliance, efficiency, or safety, our experience and insight ensure
+            reliable and effective solutions. Syngas analysis, one of the most
+            demanding fields, has been a focus for the past five years. Our
+            expertise extends beyond measuring calorific values; we analyse
+            various gas components to help optimise plant operations. If no
+            solution exists for your unique challenges, we’ll design and build
+            one. Trust Controls and Instrumentation Ltd to support all your gas
+            instrument needs.
           </p>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0">
           <img
-            src="../assets/cilimage7.jpg"
+            src={cilimage7}
             alt="Team working on gas instruments"
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg w-full max-w-lg md:max-w-2xl mx-auto"
           />
         </div>
       </section>
@@ -110,7 +125,7 @@ const About = () => {
             <img
               src={expertiseContent[activeTab].image}
               alt={expertiseContent[activeTab].title}
-              className="mt-6 rounded-lg shadow-lg"
+              className="mt-6 rounded-lg shadow-lg w-full max-w-md md:max-w-lg mx-auto"
             />
           </div>
         </div>
