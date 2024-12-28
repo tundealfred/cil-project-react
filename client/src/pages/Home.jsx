@@ -3,6 +3,11 @@ import HeroSection from "../components/HeroSection";
 import ServiceCard from "../components/ServiceCard";
 import AdditionalServiceCard from "../components/AdditionalServiceCard";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import caseStudy1 from "../assets/caseStudy1.jpg";
+import caseStudy2 from "../assets/caseStudy2.jpg";
+import caseStudy3 from "../assets/caseStudy3.jpg";
+import caseStudy4 from "../assets/caseStudy4.jpg";
 
 const services = [
   {
@@ -42,6 +47,44 @@ const additionalServices = [
     title: "Installation & Commissioning",
     description:
       "Single sensors to complete systems, we can get your project over the finish line.",
+  },
+];
+
+const caseStudies = [
+  {
+    id: 1,
+    image: caseStudy1,
+    title: "CEMS Implementation at Industrial Plant",
+    description:
+      "We successfully installed and commissioned Continuous Emission Monitoring Systems for a major industrial plant.",
+  },
+  {
+    id: 2,
+    image: caseStudy2,
+    title: "Syngas Analysis for Gasification Project",
+    description:
+      "Delivered a custom syngas analysis solution for a gasification plant, optimizing their process.",
+  },
+  {
+    id: 3,
+    image: caseStudy3,
+    title: "Custom Gas Detection System",
+    description:
+      "Designed and built a bespoke gas detection system to meet unique health and safety requirements.",
+  },
+  {
+    id: 4,
+    image: caseStudy4,
+    title: "Syngas Analysis for Gasification Project 2",
+    description:
+      "Delivered a custom syngas analysis solution for a gasification plant, optimizing their process.",
+  },
+  {
+    id: 5,
+    image: caseStudy3,
+    title: "Bespoke Industrial Gas Detection System",
+    description:
+      "Designed and built a bespoke gas detection system to meet unique health and safety requirements.",
   },
 ];
 
@@ -118,6 +161,42 @@ const Home = () => {
               toggleAccordion={() => toggleAccordion(index)}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="container mx-auto py-12">
+        <h2 className="text-4xl font-bold text-gray-800 text-center mb-8">
+          Featured Case Studies
+        </h2>
+        <div className="relative flex overflow-x-scroll space-x-6 pb-4">
+          {caseStudies.map((caseStudy) => (
+            <motion.div
+              key={caseStudy.id}
+              className="flex-shrink-0 bg-white rounded-lg shadow-lg overflow-hidden w-80"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img
+                src={caseStudy.image}
+                alt={caseStudy.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-xl font-bold text-gray-800">
+                  {caseStudy.title}
+                </h3>
+                <p className="text-gray-600 mt-2">{caseStudy.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+        <div className="text-center mt-8">
+          <Link
+            to="/case-studies"
+            className="bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-blue-700 transition"
+          >
+            View All Case Studies
+          </Link>
         </div>
       </section>
     </>
