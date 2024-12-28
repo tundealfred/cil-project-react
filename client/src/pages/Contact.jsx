@@ -29,7 +29,7 @@ const ContactUs = () => {
         <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-8">
           {/* Header Section */}
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-4 animate-fade-in">
-            Get in touch
+            Reach out
           </h2>
           <p className="text-gray-600 text-center mb-8 animate-fade-in delay-200">
             We'd love to hear from you! Fill out the form below or request a

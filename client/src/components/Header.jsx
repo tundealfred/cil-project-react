@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +18,9 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo */}
         <div className="text-2xl font-bold text-gray-800">
-          Controls and Instrumentation Ltd
+          <Link to="/" className="hover:text-blue-600 transition">
+            Controls and Instrumentation Ltd
+          </Link>
         </div>
 
         {/* Hamburger Menu Button */}
