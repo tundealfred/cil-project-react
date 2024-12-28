@@ -1,5 +1,6 @@
 import React from "react";
 import backgroundImage from "../assets/cilimage5.jpg"; // Adjust the path based on your project structure
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -19,12 +20,12 @@ const HeroSection = () => {
           Discover our advanced solutions for gas monitoring and analysis.
         </p>
         <div className="mt-8">
-          <a
-            href="/contact"
+          <Link
+            to="./contact"
             className="px-6 py-3 bg-blue-500 text-white rounded-full shadow-lg text-lg font-semibold hover:bg-blue-600 transition"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
       </div>
     </section>
