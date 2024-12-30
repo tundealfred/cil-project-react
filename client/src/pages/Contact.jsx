@@ -183,14 +183,15 @@ const ContactUs = () => {
         {/* Franchise Form */}
         {showFranchiseForm && (
           <div
-            className="w-full max-w-3xl bg-white shadow-lg rounded-lg mt-8 p-6"
+            className="w-full max-w-3xl bg-white shadow-lg rounded-lg mt-8 p-16 relative"
             ref={franchiseFormRef}
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={handleCloseFranchiseForm}
-              className="m-2 text-red-500 font-semibold hover:text-red-600 focus:outline-none"
+              className=" absolute top-4 right-4 text-red-500 font-semibold hover:text-red-600 focus:outline-none"
+              aria-label="Close Form"
             >
               &#10060; Close Form
             </button>
