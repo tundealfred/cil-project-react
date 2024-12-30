@@ -1,7 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+//import { useNavigate } from "react-router-dom";
+import FranchiseForm from "./FranchiseForm";
 
 const ContactUs = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  //const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  //const navigate = useNavigate();
+
+  const [showFranchiseForm, setShowFranchiseForm] = useState(false);
+  const franchiseFormRef = useRef(null);
+
+  const handleFranchiseClick = () => {
+    setShowFranchiseForm(true);
+
+    if (franchiseFormRef.current) {
+      franchiseFormRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
+  const handleCloseFranchiseForm = () => {
+    setShowFranchiseForm(false); // Close the form
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,6 +32,16 @@ const ContactUs = () => {
       setIsFormSubmitted(false);
     }, 3000); // Reset after 3 seconds
   };
+
+  {
+    /*const openModal = () => {
+    setIsModalOpen(true); // Open modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal
+  };*/
+  }
 
   return (
     <main className="bg-gray-50 min-h-screen">
@@ -138,6 +170,8 @@ const ContactUs = () => {
               </p>
               <button
                 type="button"
+                onClick={handleFranchiseClick}
+                //onClick={openModal}
                 className="w-full bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-600 focus:ring-2 focus:ring-green-500 transition"
               >
                 Request Application Form
@@ -145,7 +179,95 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
+
+        {/* Franchise Form */}
+        {showFranchiseForm && (
+          <div
+            className="w-full max-w-3xl bg-white shadow-lg rounded-lg mt-8 p-6"
+            ref={franchiseFormRef}
+          >
+            {/* Close Button */}
+            <button
+              type="button"
+              onClick={handleCloseFranchiseForm}
+              className="m-2 text-red-500 font-semibold hover:text-red-600 focus:outline-none"
+            >
+              &#10060; Close Form
+            </button>
+            <FranchiseForm />
+          </div>
+        )}
       </section>
+
+      {/* Modal for Franchise Form */}
+      {/*{isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg shadow-lg w-3/4 md:w-1/2 p-8 relative">
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-red-500 font-bold"
+            >
+              X
+            </button>
+            <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+              Franchise Application Form
+            </h2>
+            <form className="space-y-4">
+              <div>
+                <label
+                  htmlFor="businessName"
+                  className="block text-gray-600 font-medium mb-1"
+                >
+                  Business Name
+                </label>
+                <input
+                  type="text"
+                  id="businessName"
+                  name="businessName"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="ownerName"
+                  className="block text-gray-600 font-medium mb-1"
+                >
+                  Owner's Name
+                </label>
+                <input
+                  type="text"
+                  id="ownerName"
+                  name="ownerName"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="location"
+                  className="block text-gray-600 font-medium mb-1"
+                >
+                  Location
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 transition"
+              >
+                Submit Application
+              </button>
+            </form>
+          </div>
+        </div>
+      )}*/}
     </main>
   );
 };
