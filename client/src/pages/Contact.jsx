@@ -183,7 +183,7 @@ const ContactUs = () => {
         {/* Franchise Form */}
         {showFranchiseForm && (
           <div
-            className="w-full max-w-3xl bg-white shadow-lg rounded-lg mt-8 p-12 relative"
+            className="w-full max-w-3xl bg-white shadow-lg rounded-lg mt-10 p-12 relative"
             ref={franchiseFormRef}
           >
             {/* Close Button */}
