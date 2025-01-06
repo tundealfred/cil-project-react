@@ -1,22 +1,24 @@
 "use strict";
 
-// express is a server library
 const express = require("express");
-
-// library that determines who is allowed to speak to our server
 const cors = require("cors");
-
-// this library lets us access our .env file
+const app = express();
+const PORT = process.env.PORT || 8080;
 require("dotenv").config();
 
-// initalizes the express library
-const app = express();
-
-// we are getting the port variable from the .env file.
-const PORT = process.env.PORT || 8080;
+const bodyParser = require("body-parser");
+const connectDB = require("./config/dbConfig");
+const formRoutes = require("./routes/formRoutes");
 
 // this settting says that everyone is allowed to speak to our server
 app.use(cors());
+app.use(bodyParser.json);
+
+// Routes
+app.use("/api", formRoutes);
+
+// Database Connection
+connectDB();
 
 // this is a route. if you turn the server on and go to http://localhost:3001/ (or whatever port you specified in your .env), you will see 'hello from the home route'
 app.get("/", (request, response) => {
