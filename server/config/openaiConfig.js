@@ -1,9 +1,15 @@
-const { Configuration, OpenAIApi } = require("openai");
+//const { Configuration, OpenAIApi } = require("openai");
 
-const openai = new OpenAIApi({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+// Ensure API key exists
+//if (!process.env.OPENAI_API_KEY) {
+//console.error("Error: OPENAI_API_KEY is not set in environment variables.");
+//process.exit(1);
+//}
+
+//const configuration = new Configuration({
+//apiKey: process.env.OPENAI_API_KEY,
+//});
 
 //const openai = new OpenAIApi(configuration);
 
-module.exports = openai;
+//module.exports = openai;

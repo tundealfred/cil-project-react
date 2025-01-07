@@ -1,7 +1,7 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const FranchiseForm = require("./models/FranchiseForm");
-const ContactForm = require("../models/ContactForm");
+const ContactForm = require("./models/ContactForm");
 
 // MongoDB Connection
 const mongoURI =

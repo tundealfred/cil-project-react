@@ -104,20 +104,20 @@ const FranchiseForm = () => {
             required
             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500"
           ></textarea>
-          <button
+          {/*<button
             type="button"
             onClick={handleAIRequest}
             className="mt-2 px-4 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 focus:ring"
           >
             Get AI Suggestions
-          </button>
+          </button>*/}
         </div>
-        {suggestions && (
+        {/*{suggestions && (
           <div className="bg-gray-100 p-4 rounded-md shadow mt-4">
             <h4 className="font-semibold text-gray-800">AI Suggestions:</h4>
             <p className="text-gray-600">{suggestions}</p>
           </div>
-        )}
+        )}*/}
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:ring"

@@ -13,7 +13,10 @@ const getSuggestions = async (req, res) => {
     const suggestions = response.data.choices[0].text.trim();
     res.json({ suggestions });
   } catch (error) {
-    console.error("Error fetching suggestions:", error);
+    console.error(
+      "Error fetching suggestions:",
+      error.response?.data || error.message
+    );
     res.status(500).json({ error: "Failed to get AI suggestions." });
   }
 };
