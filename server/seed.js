@@ -19,7 +19,7 @@ const seedDatabase = async () => {
     // Sample Franchise Form Data
     const franchiseData = [
       {
-        fullName: "John Doe",
+        fullName: "John Doe AB",
         email: "johndoe@example.com",
         phone: "1234567890",
         experience: "5 years in food industry",
@@ -28,7 +28,7 @@ const seedDatabase = async () => {
         investment: 50000,
       },
       {
-        fullName: "Jane Smith",
+        fullName: "Jane Smith BC",
         email: "janesmith@example.com",
         phone: "9876543210",
         experience: "3 years in retail",
@@ -41,13 +41,13 @@ const seedDatabase = async () => {
     // Sample Contact Form Data
     const contactData = [
       {
-        name: "Alice Johnson",
+        name: "Alice Johnson XY",
         email: "alicejohnson@example.com",
         phone: "1112223333",
         message: "Interested in learning more about your services.",
       },
       {
-        name: "Bob Brown",
+        name: "Bob Brown YZ",
         email: "bobbrown@example.com",
         phone: "4445556666",
         message: "Would like to discuss potential partnership opportunities.",

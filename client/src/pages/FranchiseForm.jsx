@@ -12,7 +12,6 @@ const FranchiseForm = () => {
     investment: "",
   });
 
-  const [suggestions, setSuggestions] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e) => {
@@ -20,27 +19,10 @@ const FranchiseForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleAIRequest = async () => {
-    try {
-      const { data } = await axios.post(
-        "http://localhost:8080/api/suggestions",
-        {
-          input: formData.businessPlan,
-        }
-      );
-      setSuggestions(data.suggestions);
-    } catch (error) {
-      console.error("Error fetching AI suggestions:", error.message);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/submit-form", {
-        formType: "franchise",
-        formData,
-      });
+      await axios.post("http://localhost:8080/api/submit-form", formData);
       setIsSubmitted(true);
       setFormData({
         fullName: "",
@@ -104,20 +86,7 @@ const FranchiseForm = () => {
             required
             className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-blue-500"
           ></textarea>
-          {/*<button
-            type="button"
-            onClick={handleAIRequest}
-            className="mt-2 px-4 py-2 bg-green-500 text-white rounded-md shadow hover:bg-green-600 focus:ring"
-          >
-            Get AI Suggestions
-          </button>*/}
         </div>
-        {/*{suggestions && (
-          <div className="bg-gray-100 p-4 rounded-md shadow mt-4">
-            <h4 className="font-semibold text-gray-800">AI Suggestions:</h4>
-            <p className="text-gray-600">{suggestions}</p>
-          </div>
-        )}*/}
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:ring"

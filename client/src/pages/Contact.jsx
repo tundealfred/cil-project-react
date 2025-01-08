@@ -1,12 +1,9 @@
 import React, { useState, useRef } from "react";
-//import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import FranchiseForm from "./FranchiseForm";
 
 const ContactUs = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  //const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
-  //const navigate = useNavigate();
-
   const [showFranchiseForm, setShowFranchiseForm] = useState(false);
   const franchiseFormRef = useRef(null);
 
@@ -25,23 +22,20 @@ const ContactUs = () => {
     setShowFranchiseForm(false); // Close the form
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsFormSubmitted(true);
-    setTimeout(() => {
-      setIsFormSubmitted(false);
-    }, 3000); // Reset after 3 seconds
-  };
+    const formData = new FormData(e.target);
+    const payload = Object.fromEntries(formData.entries());
 
-  {
-    /*const openModal = () => {
-    setIsModalOpen(true); // Open modal
+    try {
+      await axios.post("http://localhost:8080/api/contact", payload);
+      setIsFormSubmitted(true);
+      e.target.reset(); // Clear the form
+      setTimeout(() => setIsFormSubmitted(false), 3000); // Reset after 3 seconds
+    } catch (error) {
+      console.error("Error submitting contact form:", error.message);
+    }
   };
-
-  const closeModal = () => {
-    setIsModalOpen(false); // Close modal
-  };*/
-  }
 
   return (
     <main className="bg-gray-50 min-h-screen">
@@ -171,7 +165,6 @@ const ContactUs = () => {
               <button
                 type="button"
                 onClick={handleFranchiseClick}
-                //onClick={openModal}
                 className="w-full bg-green-500 text-white font-medium py-2 px-4 rounded-lg hover:bg-green-600 focus:ring-2 focus:ring-green-500 transition"
               >
                 Request Application Form
