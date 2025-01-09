@@ -22,8 +22,8 @@ connectDB();
 
 // this is a route.
 app.get("/", (request, response) => {
-  response.send("hello from the home route");
+  response.send("hello from the home route, Server is Running");
 });
 
 // this turns the server on to the port that you specifed in your .env file
-app.listen(PORT, () => console.log(`listening on ${PORT}`));
+app.listen(PORT, () => console.log(`Server is Running. listening on ${PORT}`));
