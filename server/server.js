@@ -12,7 +12,7 @@ const formRoutes = require("./routes/formRoutes");
 
 // this settting says that everyone is allowed to speak to our server
 app.use(cors());
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 
 // Routes
 app.use("/api", formRoutes);
@@ -20,7 +20,7 @@ app.use("/api", formRoutes);
 // Database Connection
 connectDB();
 
-// this is a route. if you turn the server on and go to http://localhost:3001/ (or whatever port you specified in your .env), you will see 'hello from the home route'
+// this is a route.
 app.get("/", (request, response) => {
   response.send("hello from the home route");
 });

@@ -28,7 +28,7 @@ const ContactUs = () => {
     const payload = Object.fromEntries(formData.entries());
 
     try {
-      await axios.post("http://localhost:8080/api/contact", payload);
+      await axios.post("http://localhost:8080/api/submit-contact", payload);
       setIsFormSubmitted(true);
       e.target.reset(); // Clear the form
       setTimeout(() => setIsFormSubmitted(false), 3000); // Reset after 3 seconds

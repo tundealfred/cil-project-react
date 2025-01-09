@@ -22,7 +22,7 @@ const FranchiseForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/api/submit-form", formData);
+      await axios.post("http://localhost:8080/api/submit-franchise", formData);
       setIsSubmitted(true);
       setFormData({
         fullName: "",
