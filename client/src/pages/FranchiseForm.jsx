@@ -95,7 +95,7 @@ const FranchiseForm = () => {
         </button>
       </form>
       {isSubmitted && (
-        <p className="mt-4 text-green-500 font-semibold">
+        <p className="mt-4 text-green-500 font-semibold animate-bounce">
           Thank you! Your application has been submitted.
         </p>
       )}
